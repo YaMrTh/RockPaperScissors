@@ -40,6 +40,45 @@
         }
     }
 
+    //Create the logic for a single round
+    function playRound (humanChoice, computerChoice) {
+        switch (humanChoice + computerChoice) {
+            case "RockRock":
+                console.log("Rock vs Rock, it's a tie!");
+                break;
+            case "RockPaper":
+                console.log("Paper beats Rock, you lose!");
+                computerScore++;
+                break;
+            case "RockScissors":
+                console.log("Rock beats Scissors, you win!");
+                humanScore++;
+
+                case "PaperPaper":
+                console.log("Paper vs Paper, it's a tie!");
+                break;
+            case "PaperRock":
+                console.log("Paper beats Rock, you win!");
+                humanScore++;
+                break;
+            case "PaperScissors":
+                console.log("Scissors beats Paper, you lose!");
+                computerScore++;
+
+                case "ScissorsScissors":
+                console.log("Scissors vs Scissors, it's a tie!");
+                break;
+            case "ScissorsRock":
+                console.log("Rock beats Scissors, you lose!");
+                computerScore++;
+                break;
+            case "ScissorsPaper":
+                console.log("Scissors beats Paper, you win!");
+                humanScore++;
+        };
+        console.log("Score, You: " + humanScore + " Computer: " + computerScore);
+    }
+
 
 
 
