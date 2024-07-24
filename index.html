@@ -25,6 +25,7 @@
     // Get the human choice
     function getHumanChoice (ask = "Input Rock, Paper or Scissors") {
         let hc = prompt(ask);
+        hc = hc[0].toUpperCase() + hc.slice(1).toLowerCase();
         switch (hc) {
             case "Rock":
                 console.log(hc);
