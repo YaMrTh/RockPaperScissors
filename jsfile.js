@@ -40,6 +40,7 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
+/* Logic to play exactly five rounds
 function playgame() {
     for (let i = 0 ; i < 5 ; i++) {
         let computerChoice = getComputerChoice()
@@ -56,3 +57,5 @@ function playgame() {
 }
 
 playgame()
+
+*/
