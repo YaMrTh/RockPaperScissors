@@ -50,8 +50,6 @@ const announce = document.querySelector(".announce");
 const playerScore = document.querySelector(".playerScore");
 const pcScore = document.querySelector(".computerScore");
 const outcome = document.querySelector(".outcome");
-playerScore.textContent = humanScore;
-pcScore.textContent = computerScore;
 
 
 rockButton.addEventListener("click", () => {

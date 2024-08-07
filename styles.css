@@ -1,0 +1,40 @@
+header {
+    margin-left: 15px;
+}
+
+.intro {
+    font-weight: 900;
+    margin-left: 60px;
+}
+
+choices {
+    margin-left: 30px;
+}
+
+button {
+    font-size: 20px;
+    margin-left: 15px;
+}
+
+.display {
+    font-weight: 900;
+    font-size: 22px;
+    text-decoration: underline;
+    margin: 0 50px;
+    padding: 0;
+}
+
+.score {
+    display: flex;
+    gap: 10px;
+    margin-left: 55px;
+}
+
+.announce {
+    text-decoration: underline;
+    margin-left: 30px;
+}
+
+.outcome {
+    margin-left: 10px;
+}
