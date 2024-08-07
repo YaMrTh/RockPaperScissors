@@ -23,7 +23,7 @@ function playRound(humanChoice, computerChoice) {
         console.log(`You Lose! ${computerChoice} beats ${humanChoice}.`);
     } else {
         console.log("It's a Tie!");
-        annouce.textContent = "It's a Tie!";
+        announce.textContent = "It's a Tie!";
     }
 }
 
@@ -50,7 +50,7 @@ playgame()
 const rockButton = document.querySelector(".rock");
 const paperButton = document.querySelector(".paper");
 const scissorsButton = document.querySelector(".scissors");
-const annouce = document.querySelector(".annouce");
+const announce = document.querySelector(".announce");
 
 rockButton.addEventListener("click", () => {
     let computerChoice = getComputerChoice();
