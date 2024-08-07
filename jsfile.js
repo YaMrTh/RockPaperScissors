@@ -1,11 +1,11 @@
-let choices = ['Rock', 'Paper', 'Scissors']
+let choices = ['Rock', 'Paper', 'Scissors'];
 
-let humanScore = 0
-let computerScore = 0
+let humanScore = 0;
+let computerScore = 0;
 
 function getComputerChoice() {
     return choices[Math.floor(Math.random() * 3)]
-}
+};
 
 function playRound(humanChoice, computerChoice) {
     const outcomes = {
@@ -17,54 +17,57 @@ function playRound(humanChoice, computerChoice) {
     let result = outcomes[humanChoice][computerChoice];
     if (result === 'Win') {
         humanScore++;
-        console.log(`You Win! ${humanChoice} beats ${computerChoice}.`);
         announce.textContent = "You Win! " + humanChoice + " beats " + computerChoice + ".";
+        playerScore.textContent = humanScore;
+        pcScore.textContent = computerScore;
     } else if (result === 'Lose') {
         computerScore++;
-        console.log(`You Lose! ${computerChoice} beats ${humanChoice}.`);
         announce.textContent = "You Lose! " + computerChoice +" beats " + humanChoice + ".";
+        playerScore.textContent = humanScore;
+        pcScore.textContent = computerScore;
     } else {
-        console.log("It's a Tie!");
         announce.textContent = "It's a Tie!";
-    }
-}
+        playerScore.textContent = humanScore;
+        pcScore.textContent = computerScore;
+    };
 
-/* Logic to play exactly five rounds
-function playgame() {
-    for (let i = 0 ; i < 5 ; i++) {
-        let computerChoice = getComputerChoice()
-        let humanChoice = getHumanChoice()
-        playRound(humanChoice, computerChoice)
-    }
-    if (humanScore > computerScore) {
-        console.log("Congratulations! You won the game!");
-    } else if (humanScore < computerScore) {
-        console.log("You lost the game! Better luck next time.");
-    } else {
-        console.log("The game is a tie!");
-    }
-}
+    if (humanScore === 5) {
+        outcome.textContent = "Congratulation! You won the game.";
+        humanScore = 0;
+        computerScore = 0;
+    } else if (computerScore === 5) {
+        outcome.textContent = "Try again! The computer was better than you this time.";
+        humanScore = 0;
+        computerScore = 0;
+    };    
+};
 
-playgame()
-
-*/
 
 const rockButton = document.querySelector(".rock");
 const paperButton = document.querySelector(".paper");
 const scissorsButton = document.querySelector(".scissors");
 const announce = document.querySelector(".announce");
+const playerScore = document.querySelector(".playerScore");
+const pcScore = document.querySelector(".computerScore");
+const outcome = document.querySelector(".outcome");
+playerScore.textContent = humanScore;
+pcScore.textContent = computerScore;
+
 
 rockButton.addEventListener("click", () => {
+    outcome.textContent = "";
     let computerChoice = getComputerChoice();
     let humanChoice = "Rock";
     playRound(humanChoice, computerChoice);
 });
 paperButton.addEventListener("click", () => {
+    outcome.textContent = "";
     let computerChoice = getComputerChoice();
     let humanChoice = "Paper";
     playRound(humanChoice, computerChoice);
 });
 scissorsButton.addEventListener("click", () => {
+    outcome.textContent = "";
     let computerChoice = getComputerChoice();
     let humanChoice = "Scissors";
     playRound(humanChoice, computerChoice);
