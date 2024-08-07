@@ -18,9 +18,11 @@ function playRound(humanChoice, computerChoice) {
     if (result === 'Win') {
         humanScore++;
         console.log(`You Win! ${humanChoice} beats ${computerChoice}.`);
+        announce.textContent = "You Win! " + humanChoice + " beats " + computerChoice + ".";
     } else if (result === 'Lose') {
         computerScore++;
         console.log(`You Lose! ${computerChoice} beats ${humanChoice}.`);
+        announce.textContent = "You Lose! " + computerChoice +" beats " + humanChoice + ".";
     } else {
         console.log("It's a Tie!");
         announce.textContent = "It's a Tie!";
