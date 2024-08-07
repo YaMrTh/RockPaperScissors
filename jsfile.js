@@ -7,20 +7,6 @@ function getComputerChoice() {
     return choices[Math.floor(Math.random() * 3)]
 }
 
-function getHumanChoice(){
-    while (true) {
-        let humanChoice = prompt("Rock, Paper or Scissors: ");
-        humanChoice = humanChoice.charAt(0).toUpperCase() + 
-        humanChoice.slice(1).toLowerCase();
-        
-        if (choices.includes(humanChoice)) {
-            return humanChoice;
-        } else {
-            console.log("Not an option");
-        }
-    }
-}
-
 function playRound(humanChoice, computerChoice) {
     const outcomes = {
         'Rock': { 'Rock': 'Tie', 'Paper': 'Lose', 'Scissors': 'Win' },
@@ -59,3 +45,23 @@ function playgame() {
 playgame()
 
 */
+
+const rockButton = document.querySelector(".rock");
+const paperButton = document.querySelector(".paper");
+const scissorsButton = document.querySelector(".scissors");
+
+rockButton.addEventListener("click", () => {
+    let computerChoice = getComputerChoice();
+    let humanChoice = "Rock";
+    playRound(humanChoice, computerChoice);
+});
+paperButton.addEventListener("click", () => {
+    let computerChoice = getComputerChoice();
+    let humanChoice = "Paper";
+    playRound(humanChoice, computerChoice);
+});
+scissorsButton.addEventListener("click", () => {
+    let computerChoice = getComputerChoice();
+    let humanChoice = "Scissors";
+    playRound(humanChoice, computerChoice);
+});
